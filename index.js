@@ -4,6 +4,7 @@ const db = require('./config/mongoose');
 const path  = require('path');
 const port = 3000;
 
+require('dotenv').config();
 app.use(express.urlencoded());
 app.use(express.static('assets'));
 

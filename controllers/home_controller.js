@@ -6,13 +6,14 @@ module.exports = async (req,res)=>{
 
         const lists = await list.find({});
 
-            res.render('home',{
+            return res.render('home',{
             title:'Todo-Lists',
             lists: lists
         });
 
     }catch(error){
-        
         console.log('could not fetch the contacts form db',error);
+        return;
+        
     }
 }
