@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/home.css">
+</head>
+<body>
+
+    <h1 class="text-center heading"><%= title %></h1>
+
+    <form action="/create-list" method="post">
+
+        <div class="info-container">
+
+            <input type="text" name="category" placeholder="Topic" required> 
+            <input class="input" type="date" name="date"/>
+
+        </div>
+
+        <textarea name="description" id="description" cols="30" rows="5" placeholder="Things to Todo" required></textarea> 
+
+        <div class="btn-container">
+
+            <button type="submit" class="btn add-list">Add Task</button>
+            <div id="delete" class="btn delete-list">Delete Task</div>   
+
+        </div> 
+
+    </form>
+
+     <ul> 
+
+        <%for(let i of lists){%>
+
+            <li><input type="checkbox" value="<%=i._id%>" class="checkbox">
+
+                <div id="info">
+
+                    <p><%=i.description%></p>
+                    <p>Date: <%=i.date%></p>
+
+                </div>
+
+                <div id="cataegory"><%=i.category%></div>
+
+            </li>   
+
+        <%}%> 
+
+    </ul>
+
+    <!-- custom js file -->
+
+    <script src="Js/home.js"></script>
+    
+</body>
+</html> 
