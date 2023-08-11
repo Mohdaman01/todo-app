@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "todo-list"
+    "todo-list",
+    "node.js",
+    "full stack"
   ],
   "author": "mohd aman",
   "license": "ISC",
