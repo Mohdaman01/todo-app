@@ -2,9 +2,12 @@ const express = require('express');
 const app = express();
 const db = require('./config/mongoose');
 const path  = require('path');
+const cors = require('cors');
 const port = 3000;
 
+
 require('dotenv').config();
+app.use(cors());
 app.use(express.urlencoded());
 app.use(express.static('assets'));
 
