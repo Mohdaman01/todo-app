@@ -19,16 +19,19 @@ for(let checkbox of checkboxs){
     })
 }
 
+const host  =  window.location.href;
+
+
 deleteList.addEventListener('click',async ()=>{
 
     if(checkArray.length!==0){
 
        for(let checkbox of checkArray){
 
-        await fetch(`http://localhost:3000/delete-list/?id=${checkbox}`);
+        await fetch(`${host}delete-list/?id=${checkbox}`);
         
     }
-    location.reload();  
+    location.reload();      
   }
    
 })
